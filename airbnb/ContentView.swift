@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isSplashViewActive = true
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if (isSplashViewActive) {
+            SplashView(isActive: $isSplashViewActive)
+        } else {
+            DashboardView()
         }
-        .padding()
     }
 }
 
